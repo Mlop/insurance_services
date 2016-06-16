@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Models\User;
+
 use App\Models\Base;
 
 /**
