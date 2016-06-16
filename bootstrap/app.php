@@ -25,7 +25,23 @@ $app = new Laravel\Lumen\Application(
 
 // $app->withFacades();
 
-// $app->withEloquent();
+ $app->withEloquent();
+
+// load aliases
+//$config = require_once __DIR__.'/../config/app.php';
+//if (isset($config['aliases'])) {
+//    foreach ($config['aliases'] as $ali => $class)
+//        class_alias($class, $ali);
+//}
+//if (isset($config['configOption'])) {
+//    foreach ($config['configOption'] as $name)
+//        $app->configure($name);
+//}
+$app->configure("app");
+$timezone = config('app.timezone');
+if ($timezone) {
+    date_default_timezone_set($timezone);
+}
 
 /*
 |--------------------------------------------------------------------------
